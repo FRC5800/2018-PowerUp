@@ -13,7 +13,10 @@ public class RobotMap {
     	driveMotorR2ID = 1,
     	driveMotorL1ID = 2,
     	driveMotorL2ID = 3,
-    	armMotorID = 4;
+    	armMotorID = 4,
+    	climbMotorLeftID = 5,
+    	climbMotorRightID = 6;
+    			
     
     //Solenoids (0 - 7)
     public static final int
