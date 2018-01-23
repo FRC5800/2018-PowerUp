@@ -18,16 +18,19 @@ public class CommandMotorTime extends Command5800
 	}
 
 	//Setar as acoes que serao realizadas de forma paralela enquanto o comando e executado
+	@Override
 	protected void execute() {
 		motor.set(speed);
 	}
 	
 	//Setar as condicoes para terminar a execucao do comando
+	@Override
 	protected boolean isDone() {
 		return isTimedOut();
 	}
 
 	//Setar as acoes que serao realizadas quando a condicao isDone for satisfeita
+	@Override
 	protected void onCompletion() {
 		motor.set(0);
 	}

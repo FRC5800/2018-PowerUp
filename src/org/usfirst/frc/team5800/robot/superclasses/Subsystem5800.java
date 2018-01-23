@@ -15,6 +15,7 @@ public class Subsystem5800 extends Subsystem
 		CommandBase.id++;		
 	}
 
+	@Override
 	public final void initDefaultCommand() {
 		onInit();
 	}

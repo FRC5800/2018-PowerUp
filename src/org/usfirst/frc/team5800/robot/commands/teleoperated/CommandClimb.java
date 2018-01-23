@@ -14,8 +14,13 @@ public class CommandClimb extends Command5800
 
 	//Setar as acoes que serao realizadas de forma paralela enquanto o comando e executado
 	protected void execute() {
-		boolean climbDone = false;
-		while (climbDone = false) {
+		int climbHight;
+		public CommandMotor(Subsystem5800 requiredSubsystem, VictorSP motor, double speed) {
+			super(requiredSubsystem);
+			this.motor = motor;
+		t	his.speed = speed;
+		}
+		while (climbDone < 1234) {
 			if(Math.abs(sensors.gyro.getAngle()) < (Math.abs(this.degreesToTurn)*0.97)) {
 				driver.tankDrive(this.leftValue, this.rightValue);
 			}else if(Math.abs(sensors.gyro.getAngle()) > (Math.abs(this.degreesToTurn)*1.03)) {

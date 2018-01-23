@@ -22,6 +22,7 @@ public class CommandDrive extends Command5800 {
 	}
 
 	//Set up what the robot will do while this command is running.
+	@Override
 	protected void execute() {
 		this.arcadeSpeed = 0.9 * SubsystemJoystick.axis_d_LY.get();
 		this.arcadeRotation = SubsystemJoystick.axis_d_RX.get();
@@ -29,6 +30,7 @@ public class CommandDrive extends Command5800 {
 	}
 
 	//Determine the conditions that will stop this command.
+	@Override
 	protected boolean isDone() {
 		return false;
 	}
@@ -39,5 +41,6 @@ public class CommandDrive extends Command5800 {
 		CommandBase.driver.tankDrive(- sp - r, - sp + r);
 	}
 
+	@Override
 	protected void onCompletion() {}
 	}

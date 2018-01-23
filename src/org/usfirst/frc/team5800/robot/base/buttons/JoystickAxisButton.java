@@ -27,7 +27,8 @@ public class JoystickAxisButton extends Button
         m_triggerPoint = Math.abs(triggerPoint);
     }
 
-    public boolean get() {
+    @Override
+	public boolean get() {
         return m_negative ? m_axis.get() < -m_triggerPoint : m_axis.get() > m_triggerPoint;
     }
 }

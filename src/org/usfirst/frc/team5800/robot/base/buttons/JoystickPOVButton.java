@@ -24,7 +24,8 @@ public class JoystickPOVButton extends Button
         m_angle = angle;
     }
 
-    public boolean get() {
+    @Override
+	public boolean get() {
         return m_joystick.getPOV() == m_angle;
     }
 }

@@ -21,6 +21,7 @@ public class CommandTurnDegrees extends Command5800
 	}
 	
 	//Setar as acoes que serao realizadas quando o comando for iniciado
+	@Override
 	protected void onStart() {
 		sensors.driveEncoderL.reset();
 		sensors.driveEncoderR.reset();
@@ -28,6 +29,7 @@ public class CommandTurnDegrees extends Command5800
 	}
 
 	//Setar as acoes que serao realizadas de forma paralela enquanto o comando e executado
+	@Override
 	protected void execute() {
 		if(Math.abs(sensors.gyro.getAngle()) < (Math.abs(this.degreesToTurn)*0.97)) {
 			driver.tankDrive(this.leftValue, this.rightValue);
@@ -46,10 +48,12 @@ public class CommandTurnDegrees extends Command5800
 	}
 	
 	//Setar as condicoes para terminar a execucao do comando
+	@Override
 	protected boolean isDone() {
 		return this.done;
 	}
 
 	//Setar as acoes que serao realizadas quando a condicao isDone for satisfeita
+	@Override
 	protected void onCompletion() {}
 }

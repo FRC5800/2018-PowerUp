@@ -7,8 +7,11 @@ import org.usfirst.frc.team5800.robot.superclasses.Command5800;
 public class Autonomous extends Command5800
 {
 	public Autonomous() {super(null);}
+	@Override
 	protected void execute() {}
+	@Override
 	protected boolean isDone() {return true;}
+	@Override
 	protected void onCompletion() {}
 	
 	public static Autonomous[] autonomous = new Autonomous[5];

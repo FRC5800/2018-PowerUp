@@ -23,6 +23,7 @@ public abstract class Command5800 extends CommandBase
 		if(requiredSystem != null) requires(requiredSystem);
 	}
 
+	@Override
 	protected abstract void execute();
 
 	protected abstract boolean isDone();
@@ -32,20 +33,24 @@ public abstract class Command5800 extends CommandBase
 	protected void onStart() {
 	}
 
+	@Override
 	protected void interrupted() {
 		this.end();
 	}
 
+	@Override
 	protected final void initialize() {
 		if(commandParallel != null) commandParallel.start();
 		this.startedInAuto = Robot.isAuto;
 		this.onStart();
 	}
 
+	@Override
 	protected final boolean isFinished() {
 		return (isWhileHeld && !button.get()) || isDone();
 	}
 
+	@Override
 	protected final void end() {
 		if(commandSequential != null && !(this.startedInAuto && !Robot.isAuto)) {
 			commandSequential.start();

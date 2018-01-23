@@ -15,22 +15,26 @@ public class CommandTurnPulses extends Command5800
 	}
 	
 	//Setar as acoes que serao realizadas quando o comando for iniciado
+	@Override
 	protected void onStart() {
 		sensors.driveEncoderL.reset();
 		sensors.driveEncoderR.reset();
 	}
 
 	//Setar as acoes que serao realizadas de forma paralela enquanto o comando e executado
+	@Override
 	protected void execute() {
 		driver.tankDrive(speed, -speed);
 	}
 	
 	//Setar as condicoes para terminar a execucao do comando
+	@Override
 	protected boolean isDone() {
 		return Math.abs(sensors.driveEncoderL.get()) > pulsesToTurn && Math.abs(sensors.driveEncoderR.get()) > pulsesToTurn;
 	}
 
 	//Setar as acoes que serao realizadas quando a condicao isDone for satisfeita
+	@Override
 	protected void onCompletion() {
 	}
 }

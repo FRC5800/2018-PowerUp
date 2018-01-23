@@ -14,15 +14,18 @@ public class CommandWaitForButton extends Command5800
 	}
 
 	//Setar as acoes que serao realizadas de forma paralela enquanto o comando e executado
+	@Override
 	protected void execute() {
 	}
 
 	//Setar as condicoes para terminar a execucao do comando
+	@Override
 	protected boolean isDone() {
 		return b.get();
 	}
 
 	//Setar as acoes que serao realizadas quando a condicao isDone for satisfeita
+	@Override
 	protected void onCompletion() {
 	}
 }

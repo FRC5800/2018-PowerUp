@@ -8,20 +8,24 @@ public class CommandArmDown extends Command5800
 		super(arm);
 	}
 	
+	@Override
 	protected void onStart() {
 	}
 
 	//Setar as acoes que serao realizadas de forma paralela enquanto o comando e executado
+	@Override
 	protected void execute() {
 		arm.armDown();
 	}
 	
 	//Setar as condicoes para terminar a execucao do comando
+	@Override
 	protected boolean isDone() {
 		return arm.isSwitch1Set();
 	}
 
 	//Setar as acoes que serao realizadas quando a condicao isDone for satisfeita
+	@Override
 	protected void onCompletion() {
 		arm.armStop();
 	}

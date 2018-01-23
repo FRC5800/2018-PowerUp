@@ -28,6 +28,7 @@ public class Robot extends IterativeRobot
 	/**
 	 * This function is run when the robot is first started up and should be used for any initialization code.
 	 */
+	@Override
 	public void robotInit() {
 		//This initializes all subsystems
 		CommandBase.init();
@@ -35,6 +36,7 @@ public class Robot extends IterativeRobot
 		CameraServer.getInstance().startAutomaticCapture();
 	}
 
+	@Override
 	public void autonomousInit() {
 		//This sets the command used to begin the autonomous sequence
 		int av = (int) SmartDashboard.getNumber("Autonomous Version", 1);//REVERT Auto
@@ -48,17 +50,20 @@ public class Robot extends IterativeRobot
 	/**
 	 * This function is called periodically during autonomous.
 	 */
+	@Override
 	public void autonomousPeriodic() {
 		Scheduler.getInstance().run();
 		isAuto = isAutonomous();
 	}
 
+	@Override
 	public void teleopInit() {
 	}
 
 	/**
 	 * This function is called periodically during operator control.
 	 */
+	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
 		isAuto = isAutonomous();
@@ -67,6 +72,7 @@ public class Robot extends IterativeRobot
 	/**
 	 * This function is called periodically during test mode.
 	 */
+	@Override
 	public void testPeriodic() {
 		LiveWindow.run();
 	}

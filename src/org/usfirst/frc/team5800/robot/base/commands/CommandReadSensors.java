@@ -13,6 +13,7 @@ public class CommandReadSensors extends Command5800
 	int tick = 0;
 
 	//Setar as acoes que serao realizadas de forma paralela enquanto o comando e executado
+	@Override
 	protected void execute() {		
 		//Put any code here needed to handle readings from sensors.
 		SmartDashboard.putNumber("Gyro", sensors.gyro.getAngle());
@@ -21,11 +22,13 @@ public class CommandReadSensors extends Command5800
 	}
 
 	//Setar as condicoes para terminar a execucao do comando
+	@Override
 	protected boolean isDone() {
 		return false;
 	}
 
 	//Setar as acoes que serao realizadas quando a condicao isDone for satisfeita
+	@Override
 	protected void onCompletion() {
 	}
 }

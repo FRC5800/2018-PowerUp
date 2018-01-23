@@ -4,7 +4,6 @@ import static org.usfirst.frc.team5800.robot.RobotMap.*;
 
 import org.usfirst.frc.team5800.robot.superclasses.Subsystem5800;
 
-import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.VictorSP;
 
 public class SubsystemClimber extends Subsystem5800 {
@@ -16,6 +15,7 @@ public class SubsystemClimber extends Subsystem5800 {
 		super();
 	}
 	
+	@Override
 	public void onInit() {
 		//Perform anything that needs to be done before the subsystem is used here. 
 		//Do not start sensors. Do that in SubsystemSensors.initSensors().

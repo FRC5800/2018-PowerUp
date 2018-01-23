@@ -15,11 +15,13 @@ public class CommandEncoderMove extends Command5800
 	}
 	
 	//Setar as acoes que serao realizadas quando o comando for iniciado
+	@Override
 	protected void onStart() {
 		sensors.initSensors();
 	}
 
 	//Setar as acoes que serao realizadas de forma paralela enquanto o comando e executado
+	@Override
 	protected void execute() {
 		double parameter = 0.035;
 		double error = sensors.gyro.getAngle();
@@ -27,11 +29,13 @@ public class CommandEncoderMove extends Command5800
 	}
 
 	//Setar as condicoes para terminar a execucao do comando
+	@Override
 	protected boolean isDone() {
 		return Math.abs(sensors.driveEncoderL.get()) >= pulses && Math.abs(sensors.driveEncoderR.get()) >= pulses; 
 	}
 
 	//Setar as acoes que serao realizadas quando a condicao isDone for satisfeita
+	@Override
 	protected void onCompletion() {
 		
 	}

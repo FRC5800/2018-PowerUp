@@ -21,6 +21,7 @@ public class JoystickButtonList extends Button
 		buttonList = buttons;
 	}
 
+	@Override
 	public boolean get() {
 		for(int index = 0; index < buttonList.length; index++)
 			if(!buttonList[index].get()) return false;

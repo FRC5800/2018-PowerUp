@@ -17,15 +17,18 @@ public class CommandSingleSolenoid extends Command5800
 	}
 
 	//Set up what the robot will do while this command is running.
+	@Override
 	protected void execute() {
 	}
 	
 	//Determine the conditions that will stop this command.
+	@Override
 	protected boolean isDone() {
 		return true;
 	}
 
 	//Turn off your motors or solenoids used in this command.
+	@Override
 	protected void onCompletion() {
 		solenoid.set(this.status);
 	}
